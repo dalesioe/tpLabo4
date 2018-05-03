@@ -1,3 +1,12 @@
-<p>
-  juegos works!
-</p>
+<div class="mdc-grid-list">
+  <ul *ngFor="let aux of juegos" class="mdc-grid-list__tiles">
+    <li class="mdc-grid-tile">
+      <div class="mdc-grid-tile__primary">
+        <img class="mdc-grid-tile__primary-content" src="{{aux.imagen}}" />
+      </div>
+      <span class="mdc-grid-tile__secondary">
+        <span class="mdc-grid-tile__title">{{aux.nombre}}</span>
+      </span>
+    </li>
+  </ul>
+</div>
