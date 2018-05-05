@@ -9,7 +9,7 @@ import { AdivinaComponent } from './componentes/adivina/adivina.component';
 import { PptComponent } from './componentes/ppt/ppt.component';
 import { AhorcadoComponent } from './componentes/ahorcado/ahorcado.component';
 import { RuteoModule } from './ruteo/ruteo.module';
-import { DataGridModule } from 'primeng/datagrid';
+//import { DataGridModule } from 'primeng/datagrid';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,8 @@ import { DataGridModule } from 'primeng/datagrid';
   imports: [
     BrowserModule,
     RuteoModule,
-    FormsModule,
-    DataGridModule
+    FormsModule
+    //DataGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]
