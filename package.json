@@ -25,6 +25,7 @@
     "core-js": "^2.4.1",
     "primeng": "^5.2.5",
     "rxjs": "^6.1.0",
+    "sweetalert2": "^7.19.3",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

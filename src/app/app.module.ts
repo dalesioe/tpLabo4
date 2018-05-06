@@ -9,7 +9,9 @@ import { AdivinaComponent } from './componentes/adivina/adivina.component';
 import { PptComponent } from './componentes/ppt/ppt.component';
 import { AhorcadoComponent } from './componentes/ahorcado/ahorcado.component';
 import { RuteoModule } from './ruteo/ruteo.module';
-//import { DataGridModule } from 'primeng/datagrid';
+import { Http, HttpModule} from '@angular/http';
+import {HttpService} from './servicios/http.service';
+import {LoginService} from './servicios/login.service';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,11 @@ import { RuteoModule } from './ruteo/ruteo.module';
   imports: [
     BrowserModule,
     RuteoModule,
-    FormsModule
+    FormsModule,
+    HttpModule
     //DataGridModule
   ],
-  providers: [],
+  providers: [HttpService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
