@@ -4,6 +4,7 @@ import { LoginService } from '../../servicios/login.service';
 import { Jugador } from '../../clases/jugador';
 import { HttpService } from '../../servicios/http.service';
 import { Http } from '@angular/http';
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,8 +24,27 @@ export class LoginComponent implements OnInit {
     this.serviceHttp.post('http://localhost:8080/Api/LoginUsuario', datos)
       .toPromise()
       .then(()=>
-        this.router.navigate(['Juegos'])
+      swal({
+        title: 'Bienvenido ',
+        text: 'Accediendo a la plataforma de juegos!.',
+        timer: 2000,
+        onOpen: () => {
+          swal.showLoading()
+        }
+      }).then((result) => {
+        if (
+          // Read more about handling dismissals
+          result.dismiss === swal.DismissReason.timer
+        ) {
+          console.log('I was closed by the timer')
+        }
+        this.router.navigate(['Juegos']);
+      })
       )
-      .catch(err=>console.log(err));
+      .catch( ()=>swal(
+        'Error',
+        'Usuario o contraseña invalidos',
+        'error'
+      ));
   }
 }
